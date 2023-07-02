@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
+
+name: Update code
+
+jobs:
+  test_action:
+    name: Test workflow
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run action
+        uses: pypi-data/toolchain/actions/get-code@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          workspace: ${{ github.workspace }}
+          run-id: ${{ github.run_number }}
