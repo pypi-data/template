@@ -27,6 +27,8 @@ jobs:
     needs: [ trigger ]
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: main
       - name: Run action
         uses: pypi-data/toolchain/actions/update-readme@main
         with:
