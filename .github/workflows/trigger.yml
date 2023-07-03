@@ -3,7 +3,7 @@ on:
     inputs:
       run_id:
         description: 'Limit'
-        required: false
+        required: true
 
 name: Trigger
 
