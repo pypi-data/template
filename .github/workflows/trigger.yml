@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
     inputs:
-      run_id:
+      limit:
         description: 'Limit'
         required: true
 
