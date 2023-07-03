@@ -9,12 +9,12 @@ name: Trigger
 
 jobs:
   trigger:
-    name: Test workflow
+    name: Trigger workflow
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Run action
-        uses: pypi-data/toolchain/actions/get-code@main
+        uses: pypi-data/toolchain/actions/trigger@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           workspace: ${{ github.workspace }}
