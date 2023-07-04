@@ -35,3 +35,17 @@ jobs:
         uses: pypi-data/toolchain/actions/update-readme@main
         with:
           workspace: ${{ github.workspace }}
+
+  update_index:
+    name: Update Index
+    runs-on: ubuntu-latest
+    needs: [ trigger ]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: Run action
+        uses: pypi-data/toolchain/actions/update-index@main
+        with:
+          workspace: ${{ github.workspace }}
+          token: ${{ secrets.GITHUB_TOKEN }}
