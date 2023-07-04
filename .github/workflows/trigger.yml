@@ -5,6 +5,8 @@ on:
         description: 'Limit'
         required: true
 
+concurrency: trigger
+
 name: Trigger
 
 jobs:
