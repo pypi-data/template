@@ -3,6 +3,7 @@ on:
     inputs:
       limit:
         description: 'Limit'
+        type: number
         required: true
       timeout:
         description: 'Timeout'
