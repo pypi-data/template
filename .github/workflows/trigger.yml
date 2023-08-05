@@ -25,7 +25,7 @@ jobs:
           ref: main
           ssh-key: ${{ secrets.DEPLOY_KEY }}
       - name: Run action
-        uses: pypi-data/toolchain/actions/trigger@main
+        uses: pypi-data/internal-toolchain/actions/trigger@main
         timeout-minutes: ${{ fromJson(inputs.timeout) }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -42,7 +42,7 @@ jobs:
         with:
           ref: main
       - name: Run action
-        uses: pypi-data/toolchain/actions/update-readme@main
+        uses: pypi-data/internal-toolchain/actions/update-readme@main
         with:
           workspace: ${{ github.workspace }}
 
@@ -55,7 +55,7 @@ jobs:
         with:
           ref: main
       - name: Run action
-        uses: pypi-data/toolchain/actions/update-index@main
+        uses: pypi-data/internal-toolchain/actions/update-index@main
         with:
           workspace: ${{ github.workspace }}
           token: ${{ secrets.GITHUB_TOKEN }}
